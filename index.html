@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Na Brasa - Buffet de Churrasco</title>
+    <link rel="shortcut icon" href="img2/logo.png">
+    <link rel="stylesheet" href ="css/style.css">
+</head>
+<body>
+    <header>
+    <div class="header-content">
+        <div class="logo-container">
+            <img src="img/logo.png" alt="Brasa - Buffet de Churrasco">
+        </div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="menu.html">Menu</a>
+            <a href="cadastrar.html">Cadastrar</a>
+            <a href="login.html">Login</a>
+        </nav>
+
+        <div class="header-right">
+            <button onclick="toggleTheme()">☾☼ Mode</button>
+                <button class="cart-icon" id="btn-carrinho">
+                🛒Cart<span id="cart-count"></span>
+            </button>
+        </div>
+</header>
+
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1>Bem-Vindo ao Na Brasa</h1>
+            <p>Onde a tradição encontra o sabor autêntico.</p>
+        </div>
+    </section>
+
+    <main>
+         <h2 class="section-title">Quem somos</h2>
+         <p  id="sobre"></p>
+
+<p>Somos um restaurante com sede em Bangu e filiais no Recreio e na Barra da Tijuca. 
+    Oferecemos uma grande variedade de pratos e estamos prontos para atendê-los tanto em nossas unidades quanto no conforto de suas casas! 
+    Além das diversas opções de entradas e carnes, também contamos com pratos vegetarianos, sobremesas e bebidas diversificadas. 
+    Nosso objetivo é sempre proporcionar o melhor sabor e a máxima satisfação aos nossos clientes. 
+    Pensando nisso, criamos este site para ampliar nosso alcance e facilitar o seu contato conosco.</p>
+
+<!-- Pratos Tradicionais -->
+    <div class="section">
+        <h2 class="section-title">Pratos Tradicionais</h2><br>
+        <div class="carousel-container">
+            <div class="carousel-wrapper">
+                <img id="traditional-img" class="carousel-image" src="img/BifeAnchoPremium.jpeg" alt="Prato tradicional">
+                <button class="carousel-btn prev" onclick="changeSlide('traditional', -1)">‹</button>
+                <button class="carousel-btn next" onclick="changeSlide('traditional', 1)">›</button>
+            </div>
+            <div class="content-wrapper" id="traditional-content">
+                <h3 class="dish-name">Bife Ancho Premium</h3>
+                <p class="dish-description">Corte nobre argentino grelhado ao ponto, servido com manteiga de ervas e acompanhamentos especiais. Uma explosão de sabor que derrete na boca.</p>
+                <div class="dish-ingredients">
+                    <h3>Ingredientes:</h3>
+                    <ul>
+                        <li>Bife Ancho 400g</li>
+                        <li>Manteiga de ervas artesanal</li>
+                        <li>Batatas rústicas assadas</li>
+                        <li>Legumes grelhados</li>
+                        <li>Molho chimichurri</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="dots" id="traditional-dots"></div>
+    </div>
+
+    <!-- Pratos Vegetarianos -->
+    <div class="section">
+        <h2 class="section-title">Pratos Vegetarianos</h2><br>
+        <div class="carousel-container reverse">
+            <div class="carousel-wrapper">
+                <img id="vegetarian-img" class="carousel-image" src="img/BowlColorido.jpeg" alt="Prato vegetariano">
+                <button class="carousel-btn prev" onclick="changeSlide('vegetarian', -1)">‹</button>
+                <button class="carousel-btn next" onclick="changeSlide('vegetarian', 1)">›</button>
+            </div>
+            <div class="content-wrapper" id="vegetarian-content">
+                <h3 class="dish-name">Bowl Colorido</h3>
+                <p class="dish-description">Uma combinação vibrante de quinoa, vegetais frescos, grão-de-bico crocante e molho tahine. Nutritivo, delicioso e visualmente deslumbrante.</p>
+                <div class="dish-ingredients">
+                    <h3>Ingredientes:</h3>
+                    <ul>
+                        <li>Quinoa tricolor</li>
+                        <li>Grão-de-bico tostado</li>
+                        <li>Abacate fresco</li>
+                        <li>Tomate cereja</li>
+                        <li>Molho tahine caseiro</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="dots" id="vegetarian-dots"></div>
+    </div>
+
+    <!-- Bebidas -->
+    <div class="section">
+        <h2 class="section-title">Bebidas Especiais</h2><br>
+        <div class="carousel-container">
+            <div class="carousel-wrapper">
+                <img id="drinks-img" class="carousel-image" src="img/MojitoTropical.jpeg" alt="Bebida">
+                <button class="carousel-btn prev" onclick="changeSlide('drinks', -1)">‹</button>
+                <button class="carousel-btn next" onclick="changeSlide('drinks', 1)">›</button>
+            </div>
+            <div class="content-wrapper" id="drinks-content">
+                <h3 class="dish-name">Mojito Tropical</h3>
+                <p class="dish-description">Clássico cubano reinventado com frutas tropicais frescas, hortelã orgânica e rum premium. Refrescante e sofisticado.</p>
+                <div class="dish-ingredients">
+                    <h3>Ingredientes:</h3>
+                    <ul>
+                        <li>Rum branco premium</li>
+                        <li>Hortelã fresca</li>
+                        <li>Limão siciliano</li>
+                        <li>Frutas tropicais</li>
+                        <li>Açúcar orgânico</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="dots" id="drinks-dots"></div>
+    </div>
+
+    <!-- Sobremesas -->
+    <div class="section">
+        <h2 class="section-title">Sobremesas Irresistíveis</h2><br>
+        <div class="carousel-container reverse">
+            <div class="carousel-wrapper">
+                <img id="desserts-img" class="carousel-image" src="img/CheesecakedeFrutasVermelhas.jpg" alt="Sobremesa">
+                <button class="carousel-btn prev" onclick="changeSlide('desserts', -1)">‹</button>
+                <button class="carousel-btn next" onclick="changeSlide('desserts', 1)">›</button>
+            </div>
+            <div class="content-wrapper" id="desserts-content">
+                <h3 class="dish-name">Cheesecake de Frutas Vermelhas</h3>
+                <p class="dish-description">Cremoso cheesecake artesanal com base crocante e cobertura de frutas vermelhas frescas. O equilíbrio perfeito entre doce e ácido.</p>
+                <div class="dish-ingredients">
+                    <h3>Ingredientes:</h3>
+                    <ul>
+                        <li>Cream cheese premium</li>
+                        <li>Biscoito de chocolate</li>
+                        <li>Morangos frescos</li>
+                        <li>Framboesas</li>
+                        <li>Calda de frutas vermelhas</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="dots" id="desserts-dots"></div>
+    </div>
+    </main>
+
+    <footer>
+    <div class="footer-content">
+        <!-- Coluna 1: Logo -->
+        <div class="footer-logo">
+            <img src="img/logo.png" alt="Brasa - Buffet de Churrasco">
+        </div>
+
+        <!-- Coluna 2: Conecte-se Conosco -->
+        <div class="footer-contact">
+            <h3>Conecte-se Conosco</h3>
+            <p>Siga-nos nas redes sociais para novidades e promoções exclusivas!</p>
+            <div class="social-links">
+                <a href="https://www.instagram.com/nabrasabuffetdechurrasco" target="_blank">
+                    <img src="img/instagram.jpg" alt="Instagram">
+                </a>
+                <a href="https://www.facebook.com/154207815261800" target="_blank">
+                    <img src="img/facebook.jpg" alt="Facebook">
+                </a>
+                <a href="https://wa.me/c/5521990896891" target="_blank">
+                    <img src="img/whatsapp.jpg" alt="WhatsApp">
+                </a>
+            </div>
+        </div>
+
+        <!-- Coluna 3: Onde nos encontrar -->
+        <div class="footer-find">
+            <h3>Onde nos Encontrar</h3>
+            <a href="https://maps.app.goo.gl/ZSpKinvtptAQZwN7A">Restaurante em Bangu</a><br>
+            <a href="https://maps.app.goo.gl/ZSpKinvtptAQZwN7A">Restaurante no Recreio</a><br>
+            <a href="https://maps.app.goo.gl/ZSpKinvtptAQZwN7A">Restaurante na Barra da Tijuca</a>
+        </div>
+    </div>
+</footer>
+
+<div id="cart-sidebar">
+    <div id="cart-header">
+        <h2>Carrinho</h2>
+        <button id="close-cart">×</button>
+    </div>
+    <div id="cart-items"></div>
+    <div id="cart-footer">
+        <p class="total">Total: R$ <span id="cart-total">0,00</span></p>
+        <button id="finalizar">Finalizar Pedido</button>
+    </div>
+</div>
+
+<div id="cart-overlay"></div>
+<div id="mensagem-container" class="mensagem-container"></div>
+
+
+<script src="main.js"></script>
+</body>
+</html>
