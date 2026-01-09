@@ -1,8 +1,8 @@
 # NaBrasa
 Criação de um projeto Front-end sobre um site do restaurante NaBrasa
 
-Foi utilizado as linguagens de HTML, Css e JavaScript.
-Ainda não foi finalizado!!
+Foi utilizado as linguagens de HTML, Css e JavaScript.<br>
+Ainda não foi finalizado!! <br>
 Tenho algumas modificações Futuras:
 
 <ul>
