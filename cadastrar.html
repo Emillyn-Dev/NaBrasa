@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Na Brasa - Buffet de Churrasco</title>
+    <link rel="shortcut icon" href="img2/logo.png">
+    <link rel="stylesheet" href ="css/style.css" >
+    <link rel="stylesheet" href ="css/cadastrar.css">
+    
+</head>
+<body>
+    <header>
+    <div class="header-content">
+        <div class="logo-container">
+            <img src="img/logo.png" alt="Brasa - Buffet de Churrasco">
+        </div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="menu.html">Menu</a>
+            <a href="cadastrar.html">Cadastrar</a>
+            <a href="login.html">Login</a>
+        </nav>
+
+        <div class="header-right">
+            <button onclick="toggleTheme()">☾☼ Mode</button>
+        </div>
+    </div>
+</header>
+
+    <main>
+
+        <form>
+
+        <div class="container">
+        <h2>Criar Conta</h2>
+        <p class="subtitle">Preencha os dados abaixo para se cadastrar</p>
+
+        <div class="bloco">
+            <label for="nome">Nome Completo *</label>
+            <input type="text" id="nome" name="nome" required placeholder="Digite seu nome completo">
+        </div>
+
+        <div class="bloco">
+            <label for="email">E-mail *</label>
+            <input type="email" id="email" name="email" required placeholder="seu@email.com">
+        </div>
+
+        <div class="lado">
+            <div class="bloco">
+                <label for="telefone">Telefone *</label>
+                <input type="tel" id="telefone" name="telefone" required maxlength="11" placeholder="(00) 00000-0000">
+            </div>
+
+            <div class="bloco">
+                <label for="data-nascimento">Data de Nascimento *</label>
+                <input type="date" id="data-nascimento" name="data-nascimento" required>
+            </div>
+        </div>
+
+        <div class="bloco">
+            <label for="genero">Gênero</label>
+            <select id="genero" name="genero">
+                <option value="">Selecione...</option>
+                <option value="masculino">Masculino</option>
+                <option value="feminino">Feminino</option>
+                <option value="outro">Outro</option>
+                <option value="nao-informar">Prefiro não informar</option>
+            </select>
+        </div>
+        <div class="bloco">
+            <label for="endereco">Endereço *</label>
+            <input type="text" id="endereco" name="endereco" required placeholder="Digite seu endereço completo">
+        </div>
+        <div class="bloco">
+            <label for="cep">CEP *</label>
+            <input type="text" id="cep" name="cep" required maxlength="8" placeholder="00000-000">
+        </div>
+        <div class="bloco">
+            <label for="senha">Senha *</label>
+            <input type="password" id="senha" name="senha" required placeholder="Mínimo 6 caracteres" minlength="6">
+        </div>
+
+        <div class="bloco">
+            <label for="confirmar-senha">Confirmar Senha *</label>
+            <input type="password" id="confirmar-senha" name="confirmar-senha" required minlength="6" placeholder="Digite a senha novamente">
+        </div>
+
+        <div class="termo">
+            <label for="termos">Concordo com os termos de uso e política de privacidade</label>
+            <input type="checkbox" id="termos" name="termos" required>
+        </div>
+
+        <button id="botao" type="submit">Cadastrar</button>
+
+        <div class="login-link">
+            Já tem uma conta? <a href="login.html">Fazer login</a>
+        </div>
+        </div>
+
+        </form>
+
+    </main>
+
+    <footer>
+    <div class="footer-content">
+        <!-- Coluna 1: Logo -->
+        <div class="footer-logo">
+            <img src="img/logo.png" alt="Brasa - Buffet de Churrasco">
+        </div>
+
+        <!-- Coluna 2: Conecte-se Conosco -->
+        <div class="footer-contact">
+            <h3>Conecte-se Conosco</h3>
+            <p>Siga-nos nas redes sociais para novidades e promoções exclusivas!</p>
+            <div class="social-links">
+                <a href="https://www.instagram.com/nabrasabuffetdechurrasco" target="_blank">
+                    <img src="img/instagram.jpg" alt="Instagram">
+                </a>
+                <a href="https://www.facebook.com/154207815261800" target="_blank">
+                    <img src="img/facebook.jpg" alt="Facebook">
+                </a>
+                <a href="https://wa.me/c/5521990896891" target="_blank">
+                    <img src="img/whatsapp.jpg" alt="WhatsApp">
+                </a>
+            </div>
+        </div>
+
+        <!-- Coluna 3: Onde nos encontrar -->
+        <div class="footer-find">
+            <h3>Onde nos Encontrar</h3>
+            <a href="https://maps.app.goo.gl/ZSpKinvtptAQZwN7A">Restaurante em Bangu</a><br>
+            <a href="https://maps.app.goo.gl/ZSpKinvtptAQZwN7A">Restaurante no Recreio</a><br>
+            <a href="https://maps.app.goo.gl/ZSpKinvtptAQZwN7A">Restaurante na Barra da Tijuca</a>
+        </div>
+    </div>
+</footer>
+
+<div id="mensagem-container"></div>
+    
+    <script src="cadastro.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
