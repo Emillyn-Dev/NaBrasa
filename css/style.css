@@ -1,0 +1,648 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*Essas são variáveis pra chamar qnd quiser*/
+:root {
+    --bg-primary: #ffffff;
+    --bg-secondary: #f5f5f5;
+    --text-primary: #1a1a1a;
+    --text-secondary: #666666;
+    --accent: #c41e1e;
+    --header-bg: #040404;
+    --header-text: #ffffff;
+    --font-size: 16px;
+}
+
+/* Variáveis para Dark Mode */
+body.dark-mode {
+    --bg-primary: #1a1a1a;
+    --bg-secondary: #2d2d2d;
+    --text-primary: #ffffff;
+    --text-secondary: #b0b0b0;
+    --header-bg: #040404;
+}
+
+body {
+    font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-size: var(--font-size);
+    transition: all 0.3s ease;
+    
+}
+
+p {
+    padding: 0 45px;
+    text-indent: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1 {
+    padding: 10px;
+}
+
+#sobre {
+    border-bottom: 2px solid #333333;
+    margin-bottom: 30px;
+    width: 1000px;
+    text-align: center;
+    display: block;
+}
+
+
+header {
+    background-color: var(--header-bg);
+    padding: 20px 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+/*Conteúdo header*/
+.header-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+/*Posição do botão de alterar cor e cart*/
+.header-right {
+    display: flex;
+    gap: 15px;
+    align-items: flex-end;
+}
+
+.logo-container {
+    flex: 0 0 250px;
+}
+
+ /*Img da logo header*/
+.logo-container img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+/*Link nav*/
+nav a {
+    color: var(--header-text);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
+    letter-spacing: 1px;
+}
+
+/*Muda a cor qnd passa o mouse no link da nav*/
+nav a:hover {
+    color: var(--accent);
+}
+
+.accessibility-controls {
+    display: flex;
+    gap: 10px;
+    align-items: right;
+}
+
+.accessibility-controls button {
+    padding: 8px 15px;
+    font-size: 0.85em;
+}
+
+.accessibility-bar {
+    display: none;
+}
+
+button {
+    padding: 10px 10px;
+
+    border-color: #666666;
+    border-radius: 22px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    background-color: transparent;
+    color: white;
+    text-decoration: none;
+}
+
+/*Efeito de aumentar a botão qnd passa o mouse*/
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+button a {
+    text-decoration: none;
+    color: white;
+}
+
+/*Mexe na parte principal, tamanho, img, texto, da img de carne*/
+.hero-section {
+    position: relative;
+    height: 400px;
+    background: url(../img/restheader.png);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/*Mexe no conteúdo da imagem de carne do home*/
+.hero-content {
+    color: white;
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+/*Mexe no h1 da imagem de carne do home*/
+.hero-content h1 {
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+    font-weight: 700;
+    letter-spacing: 2px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/*Mexe no p da imagem de carne do home*/
+.hero-content p {
+    font-size: 1.5em;
+    line-height: 1.6;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+    font-weight: 300;
+    font-style: italic;
+}
+
+main {
+    max-width: 1400px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+/* SECTIONS - CARROSSEL */
+.section {
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 50px;
+    color: var(--accent);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.carousel-container {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    position: relative;
+}
+
+.carousel-container.reverse {
+    flex-direction: row-reverse;
+}
+
+.carousel-wrapper {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+}
+
+.carousel-image {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    display: block;
+    transition: opacity 0.5s ease;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.15);
+    border: 2px solid rgba(255,255,255,0.3);
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+    z-index: 10;
+    padding: 0;
+}
+
+.carousel-btn:hover {
+    background: rgba(255,255,255,0.3);
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: none;
+}
+
+.carousel-btn.prev {
+    left: 15px;
+}
+
+.carousel-btn.next {
+    right: 15px;
+}
+
+.content-wrapper {
+    flex: 1;
+    padding: 20px;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { 
+        opacity: 0; 
+        transform: translateY(20px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+.dish-name {
+    font-size: 2.2em;
+    color: var(--accent);
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.dish-description {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+    color: var(--text-secondary);
+    line-height: 1.8;
+}
+
+.dish-ingredients {
+    background: var(--bg-secondary);
+    padding: 20px;
+    border-radius: 15px;
+    border-left: 4px solid var(--accent);
+}
+
+.dish-ingredients h3 {
+    font-size: 1.3em;
+    margin-bottom: 12px;
+    color: var(--accent);
+}
+
+.dish-ingredients ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.dish-ingredients li {
+    padding: 8px 0;
+    padding-left: 25px;
+    position: relative;
+    color: var(--text-primary);
+}
+
+.dish-ingredients li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: bold;
+}
+
+/* DOTS - Indicadores */
+.dots {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.dot {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(196, 30, 30, 0.3);
+    margin: 0 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dot.active {
+    background: var(--accent);
+    transform: scale(1.3);
+}
+
+footer {
+    background-color: var(--header-bg);
+    color: var(--header-text);
+    padding: 40px 0;
+    margin-top: 80px;
+}
+
+/*Conteúdo geral do footer*/
+.footer-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    text-align: center;
+    gap: 40px;
+    font-size: 16px;
+}
+
+.footer-logo,
+.footer-contact,
+.footer-find {
+    flex: 1;
+    min-width: 250px;
+}
+
+/*Tamanho da logo footer*/
+.footer-logo img {
+    width: 200px;
+    height: auto;
+}
+
+/*Mexe no h3 do footer*/
+.footer-contact h3,
+.footer-find h3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--accent);
+}
+
+/*Mexe no link do endereço*/
+.footer-find a {
+    color: var(--header-text);
+    text-decoration: none;
+}
+
+/*Deixa o link do endereço vermelho qnd passa o mouse*/
+.footer-find a:hover {
+    color: var(--accent);
+}
+
+/*Da espaço do texto pra img e alinha no centro*/
+.social-links {
+    margin-top: 20px;
+    justify-content: center;
+}
+
+.social-links a {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+/*Efeito de aumentar a img de contato qnd passa o mouse*/
+.social-links a:hover {
+    transform: scale(1.1);
+}
+
+/*Mexe nas imagens de contato*/
+.social-links img {
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+    justify-content: right;
+    margin: 9px;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-logo,
+    .footer-contact,
+    .footer-find {
+        width: 100%;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+
+    .carousel-container,
+    .carousel-container.reverse {
+        flex-direction: column;
+    }
+
+    .carousel-image {
+        height: 300px;
+    }
+
+    .hero-content h1 {
+        font-size: 2em;
+    }
+
+    .section-title {
+        font-size: 2em;
+    }
+
+    .dish-name {
+        font-size: 1.8em;
+    }
+
+    #sobre {
+        width: 90%;
+    }
+}
+
+@media (max-width: 968px) {
+    .carousel-container,
+    .carousel-container.reverse {
+        flex-direction: column;
+    }
+
+    .carousel-image {
+        height: 300px;
+    }
+
+    .header h1 {
+        font-size: 2em;
+    }
+
+    .section-title {
+        font-size: 2em;
+    }
+
+    .dish-name {
+        font-size: 1.8em;
+    }
+}
+
+
+
+
+
+/* CARRINHO */
+
+/* ===== PAINEL LATERAL DO CARRINHO ===== */
+
+#cart-sidebar {
+    position: fixed;
+    top: 0;
+    right: -420px;   /* escondido */
+    width: 420px;
+    height: 100vh;
+    background: #ffffff;
+    box-shadow: -4px 0 15px rgba(0,0,0,0.2);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    transition: right 0.3s ease;
+    z-index: 10000;
+}
+
+body.dark-mode #cart-sidebar{
+    color: black;
+}
+
+#cart-sidebar.open {
+    right: 0;
+}
+
+#cart-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.4);
+    display: none;
+    z-index: 9999;
+}
+
+#cart-overlay.show {
+    display: block;
+}
+
+#cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#cart-header h2 {
+    margin: 0;
+}
+
+#close-cart {
+    border: none;
+    background: none;
+    font-size: 32px;
+    cursor: pointer;
+}
+
+#cart-items {
+    flex: 1;
+    overflow-y: auto;
+    margin-top: 15px;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.cart-item .info p {
+    margin: 0;
+}
+
+.cart-item .remove {
+    background: none;
+    border: none;
+    color: red;
+    cursor: pointer;
+}
+
+#cart-footer {
+    border-top: 2px solid #ddd;
+    padding-top: 15px;
+}
+
+#cart-footer .total {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#finalizar {
+    width: 100%;
+    padding: 12px;
+    background: #e40808;
+    color: white;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+
+
+.mensagem-container {
+    position: fixed;
+    top: 20px;           /* distância do topo */
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center; /* centraliza horizontalmente */
+    pointer-events: none;    /* permite clicar nos elementos atrás */
+    z-index: 9999;
+}
+
+.mensagem {
+    background-color: #4CAF50; /* verde por padrão */
+    color: white;
+    padding: 8px 16px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: all 0.3s ease;
+    font-size: 1em;
+    text-align: center;
+    pointer-events: auto;
+    
+}
+
+.mensagem.show {
+    opacity: 1;
+    transform: translateY(0);
+}
