@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Na Brasa - Buffet de Churrasco</title>
+    <link rel="shortcut icon" href="img2/logo.png">
+    <link rel="stylesheet" href="css/menu.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo-container">
+                <img src="img/logo.png" alt="Brasa - Buffet de Churrasco">
+            </div>
+
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="menu.html">Menu</a>
+                <a href="cadastrar.html">Cadastrar</a>
+                <a href="login.html">Login</a>
+            </nav>
+
+            <div class="header-right">
+                <button onclick="toggleTheme()">☾☼ Mode</button>
+                <button class="cart-icon" id="btn-carrinho">
+                🛒Cart<span id="cart-count"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <section class="sec">
+        <div class="sec-content">
+            <h1>Menu</h1>
+        </div>
+    </section>
+        
+    <main>
+        <div id="secao">
+            <div class="div-secao">          
+                <a href="#entrada">
+                    <img class="div-img" src="img2/entrada/Entrada.png" alt="Entrada">
+                </a>
+                <h3>Entradas</h3>
+            </div>
+
+            <div class="div-secao">
+                <a href="#principal">
+                    <img class="div-img" src="img2/principal/principal.png" alt="Pratos Principais">
+                </a>
+                <h3>Pratos Principais</h3>
+            </div>
+
+            <div class="div-secao">
+                <a href="#acompanhamentos">
+                    <img class="div-img" src="img2/acompanhamentos/acompanhamentos.png" alt="Acompanhamentos">
+                </a>
+                <h3>Acompanhamentos</h3>
+            </div>
+
+            <div class="div-secao">
+                <a href="#bebidas">
+                    <img id="beb" src="img2/bebidas/bebidas.png" alt="Bebidas">
+                </a>
+                <h3>Bebidas</h3>
+            </div>
+
+            <div class="div-secao">
+                <a href="#sobremesas">
+                    <img class="div-img" src="img2/sobremesa/sobremesa.png" alt="Sobremesas">
+                </a>
+                <h3>Sobremesas</h3>
+            </div>
+        </div>
+
+        <hr>
+
+        <!-- ==================== ENTRADAS NORMAL ==================== -->
+        <div class="div-car" id="entrada-normal">
+            <h2 id="entrada" class="titulos">Entradas</h2>
+
+            <div class="img-car">
+                <div class="item-car">
+                    <img class="img-car1" src="img2/entrada/QUENTE - Camarões salteados no alho e limão siciliano.png" >
+                    <p class="detalhe">Camarões salteados no alho e limão siciliano.</p>
+                    
+                    <div class="acoes"> 
+                        <div class="botoes">
+                            <div class="quantidade-container" data-preco="20">
+                                <button class="menos" onclick="alterarQuantidade(this, -1)">−</button>
+                                <input type="number" class="quantidade" value="0" min="0">
+                                <button class="mais" onclick="alterarQuantidade(this, 1)">+</button>
+                                <span class="valor">R$20,00</span>
+                            </div>
+                            <div class="botao-quantidade">
+                                <button class="carrinho" onclick="adicionarCarrinho1(this)">Adicionar ao carrinho</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item-car">
+                    <img id="img-car1" src="img2/entrada/QUENTE - Croquetes de cordeiro com aioli de hortelã.png" >
+                    <p class="detalhe">Croquetes de cordeiro com aioli de hortelã.</p>
+                    <div class="acoes"> 
+                        <div class="botoes">
+                            <div class="quantidade-container" data-preco="20">
+                                <button class="menos" onclick="alterarQuantidade(this, -1)">−</button>
+                                <input type="number" class="quantidade" value="0" min="0">
+                                <button class="mais" onclick="alterarQuantidade(this, 1)">+</button>
+                                <span class="valor">R$20,00</span>
+                            </div>
+                            <div class="botao-quantidade">
+                                <button class="carrinho" onclick="adicionarCarrinho1(this)">Adicionar ao carrinho</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item-car">
+                    <img class="img-car1" src="img2/entrada/Tábua de frios e queijos artesanais com pães rústicos.png" >
+                    <p class="detalhe">Tábua de frios e queijos artesanais com pães rústicos.</p>
+                    <div class="acoes"> 
+                        <div class="botoes">
+                            <div class="quantidade-container" data-preco="20">
+                                <button class="menos" onclick="alterarQuantidade(this, -1)">−</button>
+                                <input type="number" class="quantidade" value="0" min="0">
+                                <button class="mais" onclick="alterarQuantidade(this, 1)">+</button>
+                                <span class="valor">R$20,00</span>
+                            </div>
+                            <div class="botao-quantidade">
+                                <button class="carrinho" onclick="adicionarCarrinho1(this)">Adicionar ao carrinho</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="botao">
+                    <button class="carousel-btn prev" onclick="changeSlide('entrada-normal', -1)">‹</button>
+                    <button class="carousel-btn next" onclick="changeSlide('entrada-normal', 1)">›</button>
+                </div>
+            </div>
+
+            <!-- ENTRADAS VEGETARIANAS -->
+            <div class="botao-veg">
+                <button style="text-align: center; margin-top: 50px; background-color: #575555; color: azure;" id="mostrarvegetarianas" class="botao-vegetariano">Ver opções vegetarianas</button>
+
+                <div class="div-veg" id="secaovegetarianas" style="display: none;">
+                    <div id="entrada-veg">
+                        <h2 class="titulos">Entrada Vegetariana</h2>
+
+                        <div class="img-car">
+                            <div class="item-car">
+                                <img class="img-car1" src="img2/entrada/VEG - Carpaccio de beterraba com queijo de cabra e nozes.png" >
+                                <p class="detalhe">Carpaccio de beterraba com queijo de cabra e nozes.</p>
+                                <div class="acoes"> 
+                                    <div class="botoes">
+                                        <div class="quantidade-container" data-preco="20">
+                                            <button class="menos" onclick="alterarQuantidade(this, -1)">−</button>
+                                            <input type="number" class="quantidade" value="0" min="0">
+                                            <button class="mais" onclick="alterarQuantidade(this, 1)">+</button>
+                                            <span class="valor">R$20,00</span>
+                                        </div>
+                                        <div class="botao-quantidade">
+                                            <button class="carrinho" onclick="adicionarCarrinho1(this)">Adicionar ao carrinho</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="item-car">
+                                <img id="img-car1" src="img2/entrada/VEG - Croquete de quinoa e legumes com aioli de ervas.png" >
+                                <p class="detalhe">Croquete de quinoa e legumes com aioli de ervas.</p>
+                                <div class="acoes"> 
+                                    <div class="botoes">
+                                        <div class="quantidade-container" data-preco="20">
+                                            <button class="menos" onclick="alterarQuantidade(this, -1)">−</button>
+                                            <input type="number" class="quantidade" value="0" min="0">
+                                            <button class="mais" onclick="alterarQuantidade(this, 1)">+</button>
+                                            <span class="valor">R$20,00</span>
+                                        </div>
+                                        <div class="botao-quantidade">
+                                            <button class="carrinho" onclick="adicionarCarrinho1(this)">Adicionar ao carrinho</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="item-car">
+                                <img class="img-car1" src="img2/entrada/VEG - Falafel com molho tahine e limão.png" >
+                                <p class="detalhe">Falafel com molho tahine e limão.</p>
+                                <div class="acoes"> 
+                                    <div class="botoes">
+                                        <div class="quantidade-container" data-preco="20">
+                                            <button class="menos" onclick="alterarQuantidade(this, -1)">−</button>
+                                            <input type="number" class="quantidade" value="0" min="0">
+                                            <button class="mais" onclick="alterarQuantidade(this, 1)">+</button>
+                                            <span class="valor">R$20,00</span>
+                                        </div>
+                                        <div class="botao-quantidade">
+                                            <button class="carrinho" onclick="adicionarCarrinho1(this)">Adicionar ao carrinho</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="botao">
+                                <button class="carousel-btn prev" onclick="changeSlide('entrada-veg', -1)">‹</button>
+                                <button class="carousel-btn next" onclick="changeSlide('entrada-veg', 1)">›</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+       
+        <!-- ==================== PRATOS PRINCIPAIS NORMAL ==================== -->
+        <div class="div-car1" id="principal-normal">
+            <h2 id="principal" class="principal">Pratos Principais</h2>
+
+            <div class="prin">
+                <div class="texto">
+                    <h4 class="sub">Nome</h4>
+                    <p class="descricao">Robalo grelhado com purê de couve-flor e crocante de alho-poró – Servido com azeite de limão-siciliano e farofa de castanhas.</p>
+
+                    <h4 class="sub">Descrição</h4>
+                    <p class="descricao">Um prato elegante e equilibrado, que une sabor e leveza. O robalo é grelhado até atingir uma pele dourada e crocante, mantendo o interior macio e suculento. Acompanhado por um purê de couve-flor cremoso e aromático, o preparo ganha textura com o crocante de alho-poró e o toque cítrico do azeite de limão-siciliano. A farofa de castanhas finaliza a experiência com um sabor levemente adocicado e sofisticado.</p>
+
+                    <div class="acoes">
+                        <div id="botoes1">
+                            <div id="lados">
+                                <div id="lado-esquerdo">
+                                    <div class="quantidade-container1" data-preco="45">
+                                        <button class="menos" onclick="alterarQuantidade(this, -1)">−</button>
+                                        <input type="number" class="quantidade" value="0" min="0">
+                                        <button class="mais" onclick="alterarQuantidade(this, 1)">+</button>
+                                        <span class="valor">R$45,00</span>
+                                    </div>
+                                </div>
+                                <div id="lado-direito">
+                                    <div class="botao-quantidade">
+                                        <button class="carrinho1" onclick="adicionarCarrinho2(this)">Adicionar ao carrinho</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item-car1">
+                    <img id="img-car2" src="img2/principal/1.jpg" alt="Prato principal">
+                    <button class="botao-p1" onclick="changeSlide('principal-normal', -1)">‹</button>
+                    <button class="botao-p2" onclick="changeSlide('principal-normal', 1)">›</button>
+                </div>
+            </div>
+
+            <!-- PRATOS PRINCIPAIS VEGETARIANOS -->
+            <div class="botao-veg">
+                <button style="text-align: center; margin-top: 50px; background-color: #575555; color: azure;" id="mostrarvegetarianas-p" class="botao-vegetariano">Ver opções vegetarianas</button>
+
+                <div class="div-veg" id="secaovegetarianas-p" style="display: none;">
+                    <div id="principal-veg">
+                        <h2 class="principal">Principal: Vegetariana</h2>
+
+                        <div class="prin">
+                            <div class="texto">
+                                <h4 class="sub">Nome</h4>
+                                <p class="descricao">Cauliflower steak com molho romesco e purê.</p>
+
+                                <h4 class="sub">Descrição</h4>
+                                <p class="descricao">Steak de couve-flor selado até ficar macio e levemente crocante, servido sobre um purê cremoso e finalizado com o molho romesco de pimentões assados e amêndoas. Um prato leve, saboroso e cheio de personalidade.</p>
+
+                                <div class="acoes">
+                                    <div id="botoes1">
+                                        <div id="lados">
+                                            <div id="lado-esquerdo">
+                                                <div class="quantidade-container1" data-preco="45">
+                                                    <button class="menos" onclick="alterarQuantidade(this, -1)">−</button>
+                                                    <input type="number" class="quantidade" value="0" min="0">
+                                                    <button class="mais" onclick="alterarQuantidade(this, 1)">+</button>
+                                                    <span class="valor">R$45,00</span>
+                                                </div>
+                                            </div>
+                                            <div id="lado-direito">
+                                                <div class="botao-quantidade">
+                                                    <button class="carrinho1" onclick="adicionarCarrinho2(this)">Adicionar ao carrinho</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="item-car1">
+                                <img id="img-car2" src="img2/principal/VEG - Cauliflower steak com molho romesco e purê.jpg" alt="Prato principal vegetariano">
+                                <button class="botao-p1" onclick="changeSlide('principal-veg', -1)">‹</button>
+                                <button class="botao-p2" onclick="changeSlide('principal-veg', 1)">›</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== ACOMPANHAMENTOS NORMAL ==================== -->
+        <div class="div-car2" id="acomp-normal">
+            <h2 id="acompanhamentos" class="titulos">Acompanhamentos</h2>
+
+            <div class="img-car">
+                <div class="item-car">
+                    <img class="img-car1" src="img2/acompanhamentos/Arroz Branco Aromatizado com Manteiga e Ervas Finas.png" >
+                    <p class="detalhe">Arroz Branco Aromatizado com Manteiga e Ervas Finas</p>
+                    <div class="acoes"> 
+                        <div id="botoes">
+                            <div class="quantidade-container" data-preco="15">
+                                <button class="menos" onclick="alterarQuantidade(this, -1)">−</button>
+                                <input type="number" class="quantidade" value="0" min="0">
+                                <button class="mais" onclick="alterarQuantidade(this, 1)">+</button>
+                                <span class="valor">R$15,00</span>
+                            </div>
+                            <div class="botao-quantidade">
+                                <button class="carrinho" onclick="adicionarCarrinho1(this)">Adicionar ao carrinho</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item-car">
+                    <img class="img-car1" src="img2/acompanhamentos/Farofa de Castanhas e Cebola Roxa..png" >
+                    <p class="detalhe">Farofa de Castanhas e Cebola Roxa.</p>
+                    <div class="acoes"> 
+                        <div id="botoes">
+                            <div class="quantidade-container" data-preco="18">
+                                <button class="menos" onclick="alterarQuantidade(this, -1)">−</button>
+                                <input type="number" class="quantidade" value="0" min="0">
+                                <button class="mais" onclick="alterarQuantidade(this, 1)">+</button>
+                                <span class="valor">R$18,00</span>
+                            </div>
+                            <div class="botao-quantidade">
+                                <button class="carrinho" onclick="adicionarCarrinho1(this)">Adicionar ao carrinho</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item-car">
+                    <img class="img-car1" src="img2/acompanhamentos/Legumes Grelhados com Azeite de Limão Siciliano..png" >
+                    <p class="detalhe">Legumes Grelhados com Azeite de Limão Siciliano.</p>
+                    <div class="acoes"> 
+                        <div id="botoes">
+                            <div class="quantidade-container" data-preco="22">
+                                <button class="menos" onclick="alterarQuantidade(this, -1)">−</button>
+                                <input type="number" class="quantidade" value="0" min="0">
+                                <button class="mais" onclick="alterarQuantidade(this, 1)">+</button>
+                                <span class="valor">R$22,00</span>
+                            </div>
+                            <div class="botao-quantidade">
+                                <button class="carrinho" onclick="adicionarCarrinho1(this)">Adicionar ao carrinho</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="img-car">
+                <div class="item-car">
+                    <img class="img-car1" src="img2/acompanhamentos/Purê de Batata Trufado com Crocante de Parmesão.png" >
+                    <p class="detalhe">Purê de Batata Trufado com Crocante de Parmesão</p>
+                    <div class="acoes"> 
+                        <div id="botoes">
+                            <div class="quantidade-container" data-preco="16">
+                                <button class="menos" onclick="alterarQuantidade(this, -1)">−</button>
+                                <input type="number" class="quantidade" value="0" min="0">
+                                <button class="mais" onclick="alterarQuantidade(this, 1)">+</button>
+                                <span class="valor">R$16,00</span>
+                            </div>
+                            <div class="botao-quantidade">
+                                <button class="carrinho" onclick="adicionarCarrinho1(this)">Adicionar ao carrinho</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item-car">
+                    <img class="img-car1" src="img2/acompanhamentos/Purê de Mandioquinha com Queijo Grana Padano.png" >
+                    <p class="detalhe">Purê de Mandioquinha com Queijo Grana Padano</p>
+                    <div class="acoes"> 
+                        <div id="botoes">
+                            <div class="quantidade-container" data-preco="8">
+                                <button class="menos" onclick="alterarQuantidade(this, -1)">−</button>
+                                <input type="number" class="quantidade" value="0" min="0">
+                                <button class="mais" onclick="alterarQuantidade(this, 1)">+</button>
+                                <span class="valor">R$8,00</span>
+                            </div>
+                            <div class="botao-quantidade">
+                                <button class="carrinho" onclick="adicionarCarrinho1(this)">Adicionar ao carrinho</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item-car">
+                    <img class="img-car1" src="img2/acompanhamentos/Batatas Rústicas ao Alecrim com Sal Rosa.png" >
+                    <p class="detalhe">Batatas Rústicas ao Alecrim com Sal Rosa</p>
+                    <div class="acoes"> 
+                        <div id="botoes">
+                            <div class="quantidade-container" data-preco="14">
+                                <button class="menos" onclick="alterarQuantidade(this, -1)">−</button>
+                                <input type="number" class="quantidade" value="0" min="0">
+                                <button class="mais" onclick="alterarQuantidade(this, 1)">+</button>
+                                <span class="valor">R$14,00</span>
+                            </div>
+                            <div class="botao-quantidade">
+                                <button class="carrinho" onclick="adicionarCarrinho1(this)">Adicionar ao carrinho</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="botao-a">
+                <button class="carousel-btn prev1" onclick="changeSlide('acomp-normal', -1)">‹</button>
+                <button class="carousel-btn next1" onclick="changeSlide('acomp-normal', 1)">›</button>
+            </div>
+
+            <!-- ACOMPANHAMENTOS VEGETARIANOS -->
+            <div class="botao-veg">
+                <button style="text-align: center; margin-top: 50px; background-color: #575555; color: azure;" id="mostrarvegetarianas-a" class="botao-vegetariano">Ver opções vegetarianas</button>
+
+                <div class="div-veg" id="secaovegetarianas-a" style="display: none;">
+                    <div id="acomp-veg">
+                        <h2 class="titulos">Acompanhamentos Vegetarianos</h2>
+
+                        <div class="img-car">
+                            <div class="item-car">
+                                <img class="img-car1" src="img2/acompanhamentos/VEG - Arroz com Amêndoas Tostadas.jpg" >
+                                <p class="detalhe">Arroz com Amêndoas Tostadas.</p>
+                                <div class="acoes"> 
+                                    <div id="botoes">
+                                        <div class="quantidade-container" data-preco="15">
+                                            <button class="menos" onclick="alterarQuantidade(this, -1)">−</button>
+                                            <input type="number" class="quantidade" value="0" min="0">
+                                            <button class="mais" onclick="alterarQuantidade(this, 1)">+</button>
+                                            <span class="valor">R$15,00</span>
+                                        </div>
+                                        <div class="botao-quantidade">
+                                            <button class="carrinho" onclick="adicionarCarrinho1(this)">Adicionar ao carrinho</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="item-car">
+                                <img class="img-car1" src="img2/acompanhamentos/VEG - Salada de Quinoa com Hortelã e Limão.jpg" >
+                                <p class="detalhe">Salada de Quinoa com Hortelã e Limão.</p>
+                                <div class="acoes"> 
+                                    <div id="botoes">
+                                        <div class="quantidade-container" data-preco="18">
+                                            <button class="menos" onclick="alterarQuantidade(this, -1)">−</button>
+                                            <input type="number" class="quantidade" value="0" min="0">
+                                            <button class="mais" onclick="alterarQuantidade(this, 1)">+</button>
+                                            <span class="valor">R$18,00</span>
+                                        </div>
+                                        <div class="botao-quantidade">
+                                            <button class="carrinho" onclick="adicionarCarrinho1(this)">Adicionar ao carrinho</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="item-car">
+                                <img class="img-car1" src="img2/acompanhamentos/VEG - Quinoa Mediterrânea.jpg" >
+                                <p class="detalhe">Quinoa Mediterrânea.</p>
+                                <div class="acoes"> 
+                                    <div id="botoes">
+                                        <div class="quantidade-container" data-preco="22">
+                                            <button class="menos" onclick="alterarQuantidade(this, -1)">−</button>
+                                            <input type="number" class="quantidade" value="0" min="0">
+                                            <button class="mais" onclick="alterarQuantidade(this, 1)">+</button>
+                                            <span class="valor">R$22,00</span>
+                                        </div>
+                                        <div class="botao-quantidade">
+                                            <button class="carrinho" onclick="adicionarCarrinho1(this)">Adicionar ao carrinho</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                         <div class="botao-a">
+                            <button class="carousel-btn prev1" onclick="changeSlide('acomp-veg', -1)">‹</button>
+                            <button class="carousel-btn next1" onclick="changeSlide('acomp-veg', 1)">›</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        <!-- ==================== BEBIDAS ==================== -->
+<div class="div-car2" id="bebidas">
+    <h2 id="bebida" class="titulos">Bebidas</h2>
+
+    <div class="img-car">
+        <div class="item-car2">
+            <img class="img-car4" src="img2/bebidas/Brisa Tropical  vodka, maracujá, manga e espuma de coco..png" >
+            <p class="detalhe">Brisa Tropical  vodka, maracujá, manga e espuma de coco.</p>
+            
+            <div class="acoes"> 
+                <div id="botoes">
+                    <div class="quantidade-container" data-preco="8">
+                        <button class="menos" onclick="alterarQuantidade(this, -1)">−</button>
+                        <input type="number" class="quantidade" value="0" min="0">
+                        <button class="mais" onclick="alterarQuantidade(this, 1)">+</button>
+                        <span class="valor">R$8,00</span>
+                    </div>
+                    <div class="botao-quantidade">
+                        <button class="carrinho" onclick="adicionarCarrinho3(this)">Adicionar ao carrinho</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="item-car2">
+            <img class="img-car4" src="img2/bebidas/Cabernet Sauvignon (Chile).png" >
+            <p class="detalhe">Cabernet Sauvignon (Chile)</p>
+            
+            <div class="acoes"> 
+                <div id="botoes">
+                    <div class="quantidade-container" data-preco="25">
+                        <button class="menos" onclick="alterarQuantidade(this, -1)">−</button>
+                        <input type="number" class="quantidade" value="0" min="0">
+                        <button class="mais" onclick="alterarQuantidade(this, 1)">+</button>
+                        <span class="valor">R$25,00</span>
+                    </div>
+                    <div class="botao-quantidade">
+                        <button class="carrinho" onclick="adicionarCarrinho3(this)">Adicionar ao carrinho</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="botao">
+            <button class="carousel-btn prev" onclick="changeSlide('bebidas', -1)">‹</button>
+            <button class="carousel-btn next" onclick="changeSlide('bebidas', 1)">›</button>
+        </div>
+    </div>
+</div>
+
+
+
+
+             <!-- ==================== SOBREMESAS ==================== -->
+<div class="div-car3" id="sobremesas">
+    <h2 class="titulos">Sobremesas</h2>
+
+    <div class="sob">
+        <div class="sob-1">
+            <img class="sob-img1" src="img2/sobremesa/Pavlova Contemporânea com Creme de Baunilha e Coulis de Framboesa..png" >
+            <p class="detalhe">Pavlova Contemporânea com Creme de Baunilha e Coulis de Framboesa.</p>
+            
+            <div class="acoes"> 
+                <div id="botoes">
+                    <div class="quantidade-container" data-preco="15">
+                        <button class="menos" onclick="alterarQuantidade(this, -1)">−</button>
+                        <input type="number" class="quantidade" value="0" min="0">
+                        <button class="mais" onclick="alterarQuantidade(this, 1)">+</button>
+                        <span class="valor">R$15,00</span>
+                    </div>
+                    <div class="botao-quantidade">
+                        <button class="carrinho" onclick="adicionarCarrinho4(this)">Adicionar ao carrinho</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="sob-2">
+            <div class="sob-sob1">
+                <img class="sob-img2" src="img2/sobremesa/PAISAGEM -Crème Brûlée de Baunilha com Crocante de Açúcar Mascavo e Framboesas Frescas..png" >
+                <p class="detalhe">PAISAGEM -Crème Brûlée de Baunilha com Crocante de Açúcar Mascavo e Framboesas Frescas.</p>
+            
+                <div class="acoes"> 
+                    <div id="botoes">
+                        <div class="quantidade-container" data-preco="17">
+                            <button class="menos" onclick="alterarQuantidade(this, -1)">−</button>
+                            <input type="number" class="quantidade" value="0" min="0">
+                            <button class="mais" onclick="alterarQuantidade(this, 1)">+</button>
+                            <span class="valor">R$17,00</span>
+                        </div>
+                        <div class="botao-quantidade">
+                            <button class="carrinho" onclick="adicionarCarrinho5(this)">Adicionar ao carrinho</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sob-sob1">
+                <img class="sob-img2" src="img2/sobremesa/PAISAGEM -Panacota de Lavanda com Mel de Flor de Laranjeira..png" >
+                <p class="detalhe">PAISAGEM -Panacota de Lavanda com Mel de Flor de Laranjeira.</p>
+            
+                <div class="acoes"> 
+                    <div id="botoes">
+                        <div class="quantidade-container" data-preco="28">
+                            <button class="menos" onclick="alterarQuantidade(this, -1)">−</button>
+                            <input type="number" class="quantidade" value="0" min="0">
+                            <button class="mais" onclick="alterarQuantidade(this, 1)">+</button>
+                            <span class="valor">R$28,00</span>
+                        </div>
+                        <div class="botao-quantidade">
+                            <button class="carrinho" onclick="adicionarCarrinho5(this)">Adicionar ao carrinho</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="botao">
+            <button class="carousel-btn prev2" onclick="changeSlide('sobremesas', -1)">‹</button>
+            <button class="carousel-btn next2" onclick="changeSlide('sobremesas', 1)">›</button>
+        </div>
+    </div>
+</div>
+            
+            
+
+
+
+        
+    </main>
+    
+    <footer>
+    <div class="footer-content">
+        <!-- Coluna 1: Logo -->
+        <div class="footer-logo">
+            <img src="img/logo.png" alt="Brasa - Buffet de Churrasco">
+        </div>
+
+        <!-- Coluna 2: Conecte-se Conosco -->
+        <div class="footer-contact">
+            <h3>Conecte-se Conosco</h3>
+            <p>Siga-nos nas redes sociais para novidades e promoções exclusivas!</p>
+            <div class="social-links">
+                <a href="https://www.instagram.com/nabrasabuffetdechurrasco" target="_blank">
+                    <img src="img/instagram.jpg" alt="Instagram">
+                </a>
+                <a href="https://www.facebook.com/154207815261800" target="_blank">
+                    <img src="img/facebook.jpg" alt="Facebook">
+                </a>
+                <a href="https://wa.me/c/5521990896891" target="_blank">
+                    <img src="img/whatsapp.jpg" alt="WhatsApp">
+                </a>
+            </div>
+        </div>
+
+        <!-- Coluna 3: Onde nos encontrar -->
+        <div class="footer-find">
+            <h3>Onde nos Encontrar</h3>
+            <a href="https://maps.app.goo.gl/ZSpKinvtptAQZwN7A">Restaurante em Bangu</a><br>
+            <a href="https://maps.app.goo.gl/ZSpKinvtptAQZwN7A">Restaurante no Recreio</a><br>
+            <a href="https://maps.app.goo.gl/ZSpKinvtptAQZwN7A">Restaurante na Barra da Tijuca</a>
+        </div>
+    </div>
+</footer>
+
+<!-- ================= PAINEL LATERAL DO CARRINHO ================= -->
+<div id="cart-sidebar">
+    <div id="cart-header">
+        <h2>Carrinho</h2>
+        <button id="close-cart">×</button>
+    </div>
+
+    <div id="cart-items"></div>
+
+    <div id="cart-footer">
+        <p class="total">Total: R$ <span id="cart-total">0,00</span></p>
+        <button id="finalizar">Finalizar Pedido</button>
+    </div>
+</div>
+
+<div id="cart-overlay"></div>
+<div id="mensagem-container" class="mensagem-container"></div>
+
+
+
+<script src="menu.js"></script>
+</body>
+</html>
