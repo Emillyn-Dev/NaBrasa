@@ -13,4 +13,5 @@ Tenho algumas modificações Futuras:
   <li>Ter a opção de deslogar da conta</li>
   <li>Armazenar os pedidos finalizados no banco de dados</li>
   <li>Ter um sistema de reserva de mesa</li>
+  <li>Otimizar a página para ter o carregamento rápido</li>
 </ul>
